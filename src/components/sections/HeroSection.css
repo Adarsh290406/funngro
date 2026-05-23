@@ -1,0 +1,346 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 8rem;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 5;
+}
+
+.hero-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: rgba(57, 255, 20, 0.05);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.05);
+}
+
+.hero-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-description {
+  max-width: 540px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-btn-group {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.hero-stats {
+  display: flex;
+  gap: var(--spacing-xxl);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--spacing-xl);
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Phone Mockup Styling */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.phone-mockup {
+  width: 320px;
+  height: 640px;
+  background-color: #050806;
+  border: 12px solid #1a221f;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(57, 255, 20, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #0b0f0d;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-header {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+}
+
+.phone-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.phone-notch {
+  width: 110px;
+  height: 18px;
+  background-color: #1a221f;
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+.phone-icons {
+  display: flex;
+  gap: var(--spacing-xs);
+  font-size: 0.8rem;
+}
+
+/* Inside Phone App Content */
+.app-content {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+/* App Profile Widget */
+.app-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #111916;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+}
+
+.avatar {
+  font-size: 1.5rem;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.welcome {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.level-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: rgba(57, 255, 20, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Balance Card */
+.balance-card {
+  background: linear-gradient(135deg, #172a1e 0%, #111916 100%);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.balance-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.balance-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.wallet-icon {
+  font-size: 1.5rem;
+}
+
+/* Widget General Layout */
+.section-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+.widget-more {
+  font-size: 0.75rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+/* Task Card Widgets */
+.task-widget-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #111916;
+  border: 1px solid var(--border-subtle);
+  padding: 10px;
+  border-radius: 12px;
+  transition: border-color 0.2s;
+}
+
+.task-widget-item:hover {
+  border-color: rgba(57, 255, 20, 0.15);
+}
+
+.task-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.bg-inst {
+  background-color: rgba(225, 48, 108, 0.1);
+}
+
+.bg-hfdc {
+  background-color: rgba(0, 74, 173, 0.1);
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.task-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.task-brand {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.task-reward {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Leaderboard Card Widget */
+.leaderboard-preview {
+  background-color: rgba(57, 255, 20, 0.05);
+  border: 1.5px dashed rgba(57, 255, 20, 0.2);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rank {
+  color: var(--text-primary);
+}
+
+.prize {
+  color: var(--primary);
+}
+
+@media (max-width: 991px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--spacing-xl);
+  }
+  
+  .hero-content {
+    align-items: center;
+  }
+  
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+}

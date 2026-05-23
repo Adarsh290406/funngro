@@ -1,0 +1,92 @@
+.how-to-earn-section {
+  position: relative;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  opacity: 0.1;
+  letter-spacing: -0.05em;
+  transition: opacity var(--transition-normal), color var(--transition-normal);
+}
+
+.step-icon-bg {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: rgba(57, 255, 20, 0.05);
+  border: 1px solid rgba(57, 255, 20, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.step-card-icon {
+  font-size: 1.5rem;
+}
+
+.step-title {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* Hover Interactive Effects */
+.step-card:hover .step-number {
+  opacity: 0.2;
+  color: var(--primary);
+}
+
+.step-card:hover .step-icon-bg {
+  background-color: rgba(57, 255, 20, 0.1);
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+  transform: scale(1.05);
+}
+
+.step-card:hover .step-title {
+  color: var(--primary);
+}
+
+@media (max-width: 991px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 567px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}

@@ -1,0 +1,63 @@
+.capabilities-section {
+  position: relative;
+}
+
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.cap-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+}
+
+.cap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cap-icon {
+  font-size: 2rem;
+}
+
+.cap-cost {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: rgba(57, 255, 20, 0.05);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.cap-title {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.cap-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.cap-card:hover .cap-title {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .cap-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}

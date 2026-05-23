@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw + 0.5rem, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2vw + 0.5rem, 2rem);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1vw + 0.5rem, 1.125rem);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.accent-text {
+  color: var(--primary);
+  -webkit-text-fill-color: var(--primary);
+  position: relative;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #8a9a8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,53 @@
+:root {
+  /* Color Palette */
+  --bg-primary: #0b0f0d;
+  --bg-surface: #111916;
+  --bg-surface-hover: #162016;
+  --bg-surface-accent: #172a1e;
+  
+  --primary: #39ff14; /* Neon green */
+  --primary-hover: #2ee60f;
+  --primary-rgb: 57, 255, 20;
+  
+  --text-primary: #f0f0f0;
+  --text-muted: #8a9a8a;
+  --text-accent: #39ff14;
+  
+  --border-glow: rgba(57, 255, 20, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Fonts */
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  --spacing-xxl: 4rem;
+
+  /* Card and Button styling */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows and Glows */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --glow-primary: 0 0 20px rgba(57, 255, 20, 0.25);
+  --glow-strong: 0 0 35px rgba(57, 255, 20, 0.5);
+  --glass-bg: rgba(17, 25, 22, 0.7);
+  --glass-border: rgba(57, 255, 20, 0.1);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #111916 0%, #0b0f0d 100%);
+  --gradient-glow: radial-gradient(circle at center, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
+}
