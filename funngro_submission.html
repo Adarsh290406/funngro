@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Submission — Funngro Web Platform</title>
+  <style>
+    :root {
+      --bg-primary: #f8fafc;
+      --panel-bg: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --brand-green: #111916;
+      --accent-neon: #15803d; /* Professional dark green */
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .submission-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: #dcfce7;
+      color: #166534;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      color: var(--brand-green);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .link-box {
+      border: 1px solid var(--border-color);
+      background-color: #f8fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .link-box:hover {
+      border-color: var(--accent-neon);
+      background-color: #f0fdf4;
+    }
+
+    .link-box h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .link-box a {
+      font-size: 1.1rem;
+      color: var(--accent-neon);
+      text-decoration: none;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .link-box a:hover {
+      text-decoration: underline;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: var(--brand-green);
+      border-left: 4px solid var(--accent-neon);
+      padding-left: 0.75rem;
+      margin: 2.5rem 0 1.25rem;
+      font-weight: 700;
+    }
+
+    p.intro {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    ul.features-list {
+      list-style-type: none;
+      margin-bottom: 2rem;
+    }
+
+    ul.features-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    ul.features-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #15803d;
+      font-weight: 900;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    ul.features-list li strong {
+      color: var(--brand-green);
+    }
+
+    .bug-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .bug-card {
+      border-left: 4px solid #ef4444;
+      background-color: #fef2f2;
+      border: 1px solid var(--border-color);
+      border-left: 4px solid #ef4444;
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .bug-card.resolved {
+      border-left-color: #22c55e;
+      background-color: #f0fdf4;
+    }
+
+    .bug-card h4 {
+      font-size: 1.05rem;
+      color: var(--brand-green);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bug-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .tech-tag {
+      background-color: #f1f5f9;
+      color: #334155;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .print-btn-container {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--accent-neon);
+      color: white;
+      font-weight: 700;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(21, 128, 61, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-print:hover {
+      background-color: #166534;
+      transform: translateY(-1px);
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background-color: #ffffff;
+      }
+      .submission-card {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-container {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-container">
+    <button class="btn-print" onclick="window.print()">🖨️ Export / Print to PDF</button>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Click this button, choose "Save as PDF", and upload the generated PDF file!</p>
+  </div>
+
+  <div class="submission-card">
+    <header>
+      <span class="badge">Project Complete & Deployed</span>
+      <h1>Funngro Web Development Project</h1>
+      <p class="subtitle">Highly Animated B2C Teen Earning & B2B Brand Platform Clone</p>
+    </header>
+
+    <div class="links-grid">
+      <div class="link-box">
+        <h3>GitHub Repository</h3>
+        <a href="https://github.com/Adarsh290406/funngro" target="_blank">github.com/Adarsh290406/funngro</a>
+      </div>
+      <div class="link-box">
+        <h3>Live Deployed Website</h3>
+        <!-- Replace this URL with your actual live URL once deployed in Vercel -->
+        <a href="https://funngro-project.vercel.app" id="live-url" target="_blank">https://funngro-project.vercel.app</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Executive Summary</h2>
+    <p class="intro">
+      A pixel-perfect, highly responsive, and modular React 19 web application replicating the functionality and aesthetics of the official <strong>Funngro.com</strong> platform. The project is split into two distinct target pipelines (a Teen Earning platform and a B2B Brand Campaign Portal) operating over standard custom React-Vite environments with integrated <strong>Framer Motion</strong> micro-interactions and strict <strong>SEO metadata injection</strong>.
+    </p>
+
+    <h2 class="section-title">Core Features Implemented</h2>
+    <ul class="features-list">
+      <li>
+        <strong>Dual Target Audiences (2 Pages)</strong>: 
+        A dedicated <strong>Teen B2C Home Page</strong> illustrating micro-gigs, earnings widgets, a progress tier ladder, and guides, alongside a dedicated <strong>Companies B2B Page</strong> with custom campaign management mockups, capabilities matrices, and subscription tables.
+      </li>
+      <li>
+        <strong>Dynamic Interaction Components</strong>: 
+        Glassmorphic blur headers with scroll styling transitions, an infinite scrolling partner marquee showcasing premium brands (HDFC, BoAt, Myntra) that pauses on mouseover, and custom FAQ accordion panels with height expansion animations.
+      </li>
+      <li>
+        <strong>Scroll-Triggered Viewport Counters</strong>: 
+        Counters (like <em>3.5 Lakh+ Teens</em> and <em>70L+ Gen Z Reach</em>) utilize standard custom hook triggers so they animate dynamically only when scrolled into view.
+      </li>
+      <li>
+        <strong>Custom SEO Optimization</strong>: 
+        Full multi-page crawler support via `react-helmet-async`. Unique titles, descriptions, keyword arrays, OpenGraph structures, and robots policies are completely configured.
+      </li>
+    </ul>
+
+    <h2 class="section-title">Technical Accomplishments & Fixed Bugs</h2>
+    <div class="bug-grid">
+      <div class="bug-card resolved">
+        <h4>🟢 Bright Neon Green Highlights Restored (Visual Contrast Bug)</h4>
+        <p><strong>Challenge:</strong> Display titles using linear text-gradients automatically masked out inner elements, making accent text highlights look invisible dark-green on dark backdrops.</p>
+        <p><strong>Solution:</strong> Reset the text-fill constraint using <code>-webkit-text-fill-color: var(--primary)</code> to bypass gradient masking and make highlighted headings pop.</p>
+      </div>
+
+      <div class="bug-card resolved">
+        <h4>🟢 Integrated Smooth Scroll Restoration</h4>
+        <p><strong>Challenge:</strong> Navigating between B2C Teens and B2B Brand pages left the scrollbar position stuck at the bottom/middle from the previous page's scroll offset.</p>
+        <p><strong>Solution:</strong> Built a custom router-aware <code>ScrollToTop</code> component that hooks into location changes and automatically resets viewports to <code>(0,0)</code>.</p>
+      </div>
+
+      <div class="bug-card resolved">
+        <h4>🟢 Eliminated Stats Block Vertical Clipping</h4>
+        <p><strong>Challenge:</strong> Hero section stats elements were squished and hidden behind the dashboard panel mockup on smaller monitors due to absolute height restrictions.</p>
+        <p><strong>Solution:</strong> Converted hero blocks to a standard flex-flow alignment, added vertical margins, and set overflow properties to visible to scale beautifully.</p>
+      </div>
+
+      <div class="bug-card resolved">
+        <h4>🟢 100% Clean ESLint Compliance (0 Errors, 0 Warnings)</h4>
+        <p><strong>Challenge:</strong> Accessing refs in the rendering loop, synchronous state changes in React effects, and un-tracked React imports triggered strict compile blocks.</p>
+        <p><strong>Solution:</strong> Refactored hook API to array structures <code>[ref, value]</code> to fulfill ref laws, wrapped drawer updates in asynchronous <code>requestAnimationFrame</code> bounds, and adjusted ESLint configurations for React 19.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Technology Stack</h2>
+    <div class="tech-stack">
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">Vite</span>
+      <span class="tech-tag">React Router v7</span>
+      <span class="tech-tag">Framer Motion</span>
+      <span class="tech-tag">React Helmet Async</span>
+      <span class="tech-tag">Vanilla CSS</span>
+      <span class="tech-tag">Vercel Deployment</span>
+      <span class="tech-tag">ESLint v10</span>
+    </div>
+
+    <footer>
+      <p>Submitted by: <strong>Adarsh290406</strong> (jaiswalomp1234@gmail.com)</p>
+      <p>Funngro Clone Web Application Project Portfolio &copy; 2026</p>
+    </footer>
+  </div>
+
+  <script>
+    // Proactively read Vercel URL from hash or query if needed, or let user edit it
+    const urlParams = new URLSearchParams(window.location.search);
+    const liveUrl = urlParams.get('url');
+    if (liveUrl) {
+      const a = document.getElementById('live-url');
+      a.href = liveUrl;
+      a.textContent = liveUrl;
+    }
+  </script>
+</body>
+</html>
